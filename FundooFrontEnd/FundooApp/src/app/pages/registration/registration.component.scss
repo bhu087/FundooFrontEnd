@@ -1,0 +1,77 @@
+.mat-card{
+    width: 110vh;
+    display: block;
+    margin: 40px;
+    margin-left:auto;
+    margin-right:auto;  
+}
+.outerDivision{
+    display: flex;
+}
+.fundooWord{
+    display: flex;
+}
+.registerMain{
+    padding: 48px 40px 36px;
+    width: 60%;
+}
+.fundooFont{
+    font-size: 25px;
+    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+}
+.blueColor{
+    color: blue;
+}
+.redColor{
+    color: red;
+}
+.greenColor{
+    color: green;
+}
+.orangeColor{
+    color: orange;
+}
+.createLine{
+    color: #202124;
+    padding-top: 16px;
+    font-family: 'Google Sans';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.3333;
+}
+.firstLastName{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.longFormField{
+    width: 100%;
+}
+.widthFormField{
+    font-size: 12px;
+}
+.emailHint{
+    font-size: 15px;
+}
+.password{
+    margin-top:70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.removeTopMargin{
+    margin: 0px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.registerLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    width: 50%;
+}

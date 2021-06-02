@@ -1,1 +1,73 @@
-<p>registration works!</p>
+<mat-card>
+    <!--<div class="outerDivision"> -->
+        <form [formGroup]="registerForm">
+        <div class="registerMain">
+            <div class="fundooWord">
+                <span>
+                    <span class="blueColor fundooFont">F</span>
+                    <span class="redColor fundooFont">u</span>
+                    <span class="orangeColor fundooFont">n</span>
+                    <span class="blueColor fundooFont">d</span>
+                    <span class="greenColor fundooFont">o</span>
+                    <span class="redColor fundooFont">o</span>
+                </span>
+            </div>
+            <div class="createLine">
+                <h1>
+                    Create your Fundoo Account
+                </h1>
+            </div>
+            <div class="firstLastName">
+                <div>
+                <mat-form-field class="widthFormField" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+                </div>
+                <div>
+                <mat-form-field class="widthFormField" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+                </div>
+            </div>
+            <div>
+                <mat-form-field class="longFormField widthFormField" appearance="outline">
+                    <mat-label>UserName</mat-label>
+                    <input matInput required>
+                    <mat-icon matSuffix>@gmail.com</mat-icon>
+                    <mat-hint class="emailHint">You can use letters, numbers & periods</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="password">
+                <div>
+                <mat-form-field class="widthFormField" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password">
+                </mat-form-field>
+                </div>
+                <div>
+                <mat-form-field class="widthFormField" appearance="outline">
+                    <mat-label>Confirm</mat-label>
+                    <input matInput type="password">
+                </mat-form-field>
+                </div>
+            </div>
+            <div>
+                <mat-hint class="emailHint">Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
+            </div>
+            <div>
+                <mat-checkbox color="primary">Show Password</mat-checkbox>
+            </div>
+            <br>
+            <div class="buttons">
+                <button mat-button color="primary">Sign in instead</button>
+                <button mat-raised-button color="primary">Next</button>
+            </div>
+        </div>
+        <!--<div class="registerLogo">
+            <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png"/>
+        </div>
+    </div>-->
+</form>
+</mat-card>
