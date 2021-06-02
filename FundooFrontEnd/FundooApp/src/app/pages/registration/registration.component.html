@@ -19,45 +19,52 @@
             </div>
             <div class="firstLastName">
                 <div>
-                <mat-form-field class="widthFormField" appearance="outline">
-                    <mat-label>First Name</mat-label>
-                    <input matInput required>
-                </mat-form-field>
+                    <mat-form-field class="widthFormField" appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid':registrationForm.firstName.errors }" ngModel/>
+                        <mat-hint *ngIf="registrationForm.firstName.errors && registrationForm.firstName.touched">First Name is required</mat-hint>
+                    </mat-form-field>
                 </div>
                 <div>
-                <mat-form-field class="widthFormField" appearance="outline">
-                    <mat-label>Last Name</mat-label>
-                    <input matInput required>
-                </mat-form-field>
+                    <mat-form-field class="widthFormField" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid':registrationForm.lastName.errors }" ngModel />
+                        <mat-hint *ngIf="registrationForm.lastName.errors && registrationForm.lastName.touched">Last Name is required</mat-hint>
+                    </mat-form-field>
                 </div>
             </div>
             <div>
                 <mat-form-field class="longFormField widthFormField" appearance="outline">
                     <mat-label>UserName</mat-label>
-                    <input matInput required>
+                    <input matInput formControlName="email" class="form-control" [ngClass]="{ 'is-invalid':registrationForm.email.errors }" ngModel/>
                     <mat-icon matSuffix>@gmail.com</mat-icon>
-                    <mat-hint class="emailHint">You can use letters, numbers & periods</mat-hint>
+                    <mat-hint *ngIf="registrationForm.email.errors && registrationForm.email.touched">Email  is required</mat-hint>
+                    
                 </mat-form-field>
+                <mat-hint class="emailHint">You can use letters, numbers & periods</mat-hint>
             </div>
             <div class="password">
                 <div>
-                <mat-form-field class="widthFormField" appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input matInput type="password">
-                </mat-form-field>
+                    <mat-form-field class="widthFormField" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="showPassword.checked ? 'text' : 'password'"
+                        formControlName="password" class="form-control" [ngClass]="{ 'is-invalid':registrationForm.password.errors }" ngModel/>
+                        <mat-hint *ngIf="registrationForm.password.errors && registrationForm.password.touched">Password is required</mat-hint>
+                    </mat-form-field>
                 </div>
                 <div>
-                <mat-form-field class="widthFormField" appearance="outline">
-                    <mat-label>Confirm</mat-label>
-                    <input matInput type="password">
-                </mat-form-field>
+                    <mat-form-field class="widthFormField" appearance="outline">
+                        <mat-label>Confirm</mat-label>
+                        <input matInput [type]="showPassword.checked ? 'text' : 'password'" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid':registrationForm.confirmPassword.errors }" ngModel/>
+                        <mat-hint *ngIf="registrationForm.confirmPassword.errors && registrationForm.confirmPassword.touched">Password is required</mat-hint>
+                    </mat-form-field>
                 </div>
             </div>
             <div>
                 <mat-hint class="emailHint">Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
             </div>
             <div>
-                <mat-checkbox color="primary">Show Password</mat-checkbox>
+                <mat-checkbox color="primary" #showPassword>Show Password</mat-checkbox>
             </div>
             <br>
             <div class="buttons">
@@ -69,5 +76,5 @@
             <img src="https://winaero.com/blog/wp-content/uploads/2019/11/Photos-new-icon.png"/>
         </div>
     </div>-->
-</form>
+    </form>
 </mat-card>
