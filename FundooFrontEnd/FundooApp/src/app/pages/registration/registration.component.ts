@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BackendServicesService } from 'src/app/backend-services.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { BackendServicesService } from 'src/app/backend-services.service';
   providers:[BackendServicesService]
 })
 export class RegistrationComponent implements OnInit {
-    constructor(private formBuilder: FormBuilder, private service: BackendServicesService) { 
+    constructor(private formBuilder: FormBuilder, private service: BackendServicesService, private router: Router) { 
       
     }
     registerForm= this.formBuilder.group({
@@ -48,6 +49,9 @@ export class RegistrationComponent implements OnInit {
       (error)=>{
         console.log(error.message)
       }
-      );
-    }
+    );
+  }
+  OnClickLogin(){
+    this.router.navigateByUrl('/login');
+  }
 }
