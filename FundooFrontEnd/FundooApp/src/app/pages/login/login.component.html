@@ -1,51 +1,53 @@
 <div class="loginMain" fxLayoutAlign="center">
-    <mat-card>
-        <div class="innerLogin">
-            <div class="fundooWord">
-                <span>
-                    <span class="blueColor fundooFont">F</span>
-                    <span class="redColor fundooFont">u</span>
-                    <span class="orangeColor fundooFont">n</span>
-                    <span class="blueColor fundooFont">d</span>
-                    <span class="greenColor fundooFont">o</span>
-                    <span class="redColor fundooFont">o</span>
-                </span>
+    <form [formGroup]="loginForm">
+        <mat-card>
+            <div class="innerLogin">
+                <div class="fundooWord">
+                    <span>
+                        <span class="blueColor fundooFont">F</span>
+                        <span class="redColor fundooFont">u</span>
+                        <span class="orangeColor fundooFont">n</span>
+                        <span class="blueColor fundooFont">d</span>
+                        <span class="greenColor fundooFont">o</span>
+                        <span class="redColor fundooFont">o</span>
+                    </span>
+                </div>
+                <div class="signInLine">
+                    <h1>
+                        Sign in
+                    </h1>
+                </div>
+                <div class="useFundooLine">
+                    <h3>
+                        Use your Fundoo Account
+                    </h3>
+                </div>
+                <div class="userNameField">
+                    <mat-form-field class="longFormField" appearance="outline">
+                        <mat-label>UserName</mat-label>
+                        <input matInput formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': loggingForm.email.errors }" ngModel/>
+                        <mat-hint *ngIf="loggingForm.email.errors && loggingForm.email.touched">Email  is required & Valid Format</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="userNameField">
+                    <mat-form-field class="longFormField" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password"
+                        formControlName="password" class="form-control" [ngClass]="{ 'is-invalid':loggingForm.password.errors }" ngModel/>
+                        <mat-hint *ngIf="loggingForm.password.errors && loggingForm.password.touched">Password is required & Match all password pattern</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button class="forgetEmail">Forget email?</button>
+                </div>
+                <br>
+                <br>
+                <div class="buttons">
+                    <button mat-button color="primary">Create Account</button>
+                    <button type="submit" mat-raised-button color="primary" >Next</button>
+                </div>
             </div>
-            <div class="signInLine">
-                <h1>
-                    Sign in
-                </h1>
-            </div>
-            <div class="useFundooLine">
-                <h3>
-                    Use your Fundoo Account
-                </h3>
-            </div>
-            <div class="userNameField">
-                <mat-form-field class="longFormField" appearance="outline">
-                    <mat-label>UserName</mat-label>
-                    <input matInput/> <!--formControlName="email" class="form-control" [ngClass]="{ 'is-invalid':registrationForm.email.errors }" ngModel/>
-                    <mat-hint *ngIf="registrationForm.email.errors && registrationForm.email.touched">Email  is required & Valid Format</mat-hint> -->
-                </mat-form-field>
-            </div>
-            <div class="userNameField">
-                <mat-form-field class="longFormField" appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input matInput type="password"/> <!--
-                    formControlName="password" class="form-control" [ngClass]="{ 'is-invalid':registrationForm.password.errors }" ngModel/>
-                    <mat-hint *ngIf="registrationForm.password.errors && registrationForm.password.touched">Password is required & Match all password pattern</mat-hint>-->
-                </mat-form-field>
-            </div>
-            <div>
-                <button class="forgetEmail">Forget email?</button>
-            </div>
-            <br>
-            <br>
-            <div class="buttons">
-                <button mat-button color="primary">Create Account</button>
-                <button type="submit" mat-raised-button color="primary" >Next</button>
-            </div>
-        </div>
-    </mat-card>
+        </mat-card>
+    </form>
 </div>
 
