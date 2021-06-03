@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +25,10 @@ export class BackendServicesService {
   
   login(login: any){
     return this.http.post(this.uri+'/api/Account/Login/', login);
+  }
+
+  forget(email: any){
+    return this.http.post(this.uri+'/api/Account/Forget/'+ email, email);
   }
 }
 
