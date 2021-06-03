@@ -27,7 +27,7 @@ export class RegistrationComponent implements OnInit {
     ngOnInit() {
       
     }
-    
+    data: any;
     get registrationForm() { return this.registerForm.controls; }
     OnRegistration(value:any){
       if (this.registerForm.invalid) {
@@ -39,9 +39,15 @@ export class RegistrationComponent implements OnInit {
         email: value.email,
         password: value.password
       }
-      this.service.registration(register).subscribe((serve) =>{
-        console.log(serve.valueOf());
-        alert(serve.valueOf());
-      });
+      this.service.registration(register).subscribe((success) =>{
+        this.data = JSON.stringify(success);
+        console.log(this.data.userID);
+        console.log(success);
+        alert(success);
+      },
+      (error)=>{
+        console.log(error.message)
+      }
+      );
     }
 }
