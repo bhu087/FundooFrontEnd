@@ -14,12 +14,15 @@ export class ForgetPasswordComponent implements OnInit {
   ngOnInit(): void {
   }
   forgetForm= this.formBuilder.group({
-    email: ['', [Validators.required]]
+    email: ['', [Validators.required, Validators.email]]
   });
 
   get forgettingForm() {return this.forgetForm.controls};
 
   OnForgetPassword(value: any){
+    if (this.forgetForm.invalid) {
+      return;
+    }
     this.service.forget(value.email).subscribe((success)=> {
       console.log(success);
     },

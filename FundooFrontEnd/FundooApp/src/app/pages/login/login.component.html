@@ -25,14 +25,14 @@
                 <div class="userNameField">
                     <mat-form-field class="longFormField" appearance="outline">
                         <mat-label>UserName</mat-label>
-                        <input matInput formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': loggingForm.email.errors }" ngModel/>
+                        <input matInput formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': loggingForm.email.errors }"/>
                         <mat-hint *ngIf="loggingForm.email.errors && loggingForm.email.touched">Email  is required & Valid Format</mat-hint>
                     </mat-form-field>
                 </div>
                 <div class="userNameField">
                     <mat-form-field class="longFormField" appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input matInput type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid':loggingForm.password.errors }" ngModel/>
+                        <input matInput type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid':loggingForm.password.errors }"/>
                         <mat-hint *ngIf="loggingForm.password.errors && loggingForm.password.touched">Password is required & Match all password pattern</mat-hint>
                     </mat-form-field>
                 </div>
