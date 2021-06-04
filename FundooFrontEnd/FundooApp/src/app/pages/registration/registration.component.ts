@@ -10,28 +10,43 @@ import { BackendServicesService } from 'src/app/backend-services.service';
   providers:[BackendServicesService]
 })
 export class RegistrationComponent implements OnInit {
+  
+  data: any;
     constructor(private formBuilder: FormBuilder, private service: BackendServicesService, private router: Router) { 
       
     }
     registerForm= this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.minLength(3)]],
-          lastName: ['', [Validators.required, Validators.minLength(3)]],
-          email : ['', [Validators.required, Validators.email]],//,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-          password: ['', [Validators.required]], // Validators.minLength(6), Validators.maxLength(20),Validators.pattern('^(?=\\D*\\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{6,20}$')]],
-          confirmPassword: ['', [Validators.required]] // Validators.minLength(6), Validators.maxLength(20),Validators.pattern('^(?=\\D*\\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{6,20}$')]]
-      //firstName: new FormControl('', Validators.required),
-      //lastName: new FormControl('', Validators.required),
-      //email: new FormControl('', Validators.email),
-      //password: new FormControl('', Validators.required),
-      //confirmPassword: new FormControl('', Validators.required)
-  });
+      lastName: ['', [Validators.required, Validators.minLength(3)]],
+      email : ['', [Validators.required, Validators.email]],//,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20),Validators.pattern('^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$')]],
+      confirmPassword: ['', [Validators.required]]
+    },
+    { 
+      validator: this.ConfirmedValidator('password', 'confirmPassword')
+    }
+    );
     ngOnInit() {
       
     }
-    data: any;
     get registrationForm() { return this.registerForm.controls; }
+
+    ConfirmedValidator(password: string, confirmPassword: string){
+      return (formGroup: FormGroup) => {
+          const control = formGroup.controls[password];
+          const matchingControl = formGroup.controls[confirmPassword];
+          if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+              return;
+          }
+          if (control.value !== matchingControl.value) {
+              matchingControl.setErrors({ confirmedValidator: true });
+          } else {
+              matchingControl.setErrors(null);
+          }
+      }
+    }
     OnRegistration(value:any){
-      if (this.registerForm.invalid) {
+      if (this.registerForm.invalid || (value.password != value.confirmPassword)) {
         return;
       }
       const register = {
