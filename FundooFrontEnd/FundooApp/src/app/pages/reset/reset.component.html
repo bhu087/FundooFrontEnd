@@ -1,7 +1,7 @@
-<div class="loginMain" fxLayoutAlign="center">
-    <form [formGroup]="forgetForm" (ngSubmit)="OnForgetPassword(forgetForm.value)">
+<div class="resetMain" fxLayoutAlign="center">
+    <form [formGroup]="resetForm">
         <mat-card>
-            <div class="innerLogin">
+            <div>
                 <div class="fundooWord">
                     <span>
                         <span class="blueColor fundooFont">F</span>
@@ -12,26 +12,24 @@
                         <span class="redColor fundooFont">o</span>
                     </span>
                 </div>
-                <div class="signInLine">
+                <div fxLayoutAlign="center">
                     <h1>
-                        Find your email
+                        Reset Your Password
                     </h1>
                 </div>
-                <div class="useFundooLine">
-                    <h3>
-                        Enter your phone number or recovery email
-                    </h3>
+                <div class="useFundooLine" fxLayoutAlign="center">
+                    <h3>Enter your recovery email</h3>
                 </div>
-                <div class="userNameField">
-                    <mat-form-field class="longFormField" appearance="outline">
+                <div FxFlex>
+                    <mat-form-field fxFill appearance="outline">
                         <mat-label>Email</mat-label>
-                        <input matInput formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': forgettingForm.email.errors }"/>
-                        <mat-hint *ngIf="forgettingForm.email.errors && forgettingForm.email.touched">Email  is required & Valid Format</mat-hint>
+                        <input matInput formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': resettingForm.email.errors }"/>
+                        <mat-hint *ngIf="resettingForm.email.errors && resettingForm.email.touched">Email  is required & Valid Format</mat-hint>
                     </mat-form-field>
                 </div>
                 <br>
                 <br>
-                <div class="nextButton">
+                <div fxLayoutAlign="end">
                     <button type="submit" mat-raised-button color="primary" >Next</button>
                 </div>
             </div>
