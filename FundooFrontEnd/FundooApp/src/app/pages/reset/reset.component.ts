@@ -12,7 +12,7 @@ import { UserServicesService } from 'src/app/services/userService/user-services.
 export class ResetComponent implements OnInit {
   href: string | undefined;
 
-  constructor(private formBuilder: FormBuilder, private service: UserServicesService,private router: Router, private activeRouter: ActivatedRoute) { }
+  constructor(private formBuilder: FormBuilder, private service: UserServicesService, private router: ActivatedRoute) { }
   resetForm = this.formBuilder.group({
     password: ['', [Validators.required, Validators.email]],
     confirmPassword: ['', [Validators.required, ]]
@@ -36,16 +36,12 @@ export class ResetComponent implements OnInit {
   }
   token : any;
   OnClickReset(value: any){
-    this.activeRouter.queryParams.subscribe(params => {
+    this.router.queryParams.subscribe(params => {
       this.token = params['token'];
   });
     this.service.reset(value.password, this.token).subscribe((serve)=>{
-      this.router.navigateByUrl('/login');
-    },
-    (error)=> {
-
-    }
-    );
+      console.log(serve);
+    });
 
   }
 }
