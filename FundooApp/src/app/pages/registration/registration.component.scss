@@ -62,41 +62,39 @@
     align-items: center;
 }
 @media (max-width: 600px) {
-    .registerOuter {
-      display: contents;
-      margin: 0;
-    }
     .mat-card{
-        width: auto;
+        width: auto !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        padding: 0 !important;
+        transition: none !important;
+        box-shadow: none !important;
     }
-    .outerDivision, .fundooWord, .password, .firstLastName, .buttons, .emailHint{
-        display: inline !important;
-    }
-    .longFormField{
-        width: auto;
+    .registerOuter{
+        margin: 0 !important;
     }
     .registerMain{
-        padding: 0 0 0;
-        width: 93%;
+        width: auto !important;
+        padding: 18px 21px;
     }
-    .buttons{
-        display: flex;
-        justify-content: space-between;
+    .longFormField{
+        width: auto !important;
     }
-    .abc{
-        justify-content: right;
+    .firstLastName{
+        width: auto !important;
+        display: inline !important;
+    }
+    .widthFormField{
+        width: 100% !important;
+    }
+    .password{
+        display: inline !important;
     }
     .createLine{
-        display: flex;
-        justify-content: center;
-        align-items: center;
         h1{
-            font-size: medium;
+            font-size: 100% !important;
         }
-    }
-    .fundooWord{
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }

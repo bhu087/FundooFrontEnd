@@ -48,8 +48,9 @@ export class RegistrationComponent implements OnInit {
     {
      this.snackBar.openSnackBar(message, action);
     }
-
+    submitted = false;
     OnRegistration(value:any){
+      this.submitted = true;
       if (this.registerForm.invalid) {
         return;
       }
