@@ -1,7 +1,9 @@
+.registerOuter{
+    margin: 40px;
+}
 .mat-card{
     width: 110vh;
     display: block;
-    margin: 40px;
     margin-left:auto;
     margin-right:auto;  
 }
@@ -19,18 +21,6 @@
     font-size: 25px;
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
 }
-.blueColor{
-    color: blue;
-}
-.redColor{
-    color: red;
-}
-.greenColor{
-    color: green;
-}
-.orangeColor{
-    color: orange;
-}
 .createLine{
     color: #202124;
     padding-top: 16px;
@@ -46,7 +36,7 @@
 }
 
 .longFormField{
-    width: 100%;
+    width: 200%;
 }
 .widthFormField{
     font-size: 12px;
@@ -55,7 +45,6 @@
     font-size: 15px;
 }
 .password{
-    margin-top:70px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -72,6 +61,42 @@
     justify-content: center;
     align-items: center;
 }
-img{
-    width: 50%;
+@media (max-width: 600px) {
+    .registerOuter {
+      display: contents;
+      margin: 0;
+    }
+    .mat-card{
+        width: auto;
+    }
+    .outerDivision, .fundooWord, .password, .firstLastName, .buttons, .emailHint{
+        display: inline !important;
+    }
+    .longFormField{
+        width: auto;
+    }
+    .registerMain{
+        padding: 0 0 0;
+        width: 93%;
+    }
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+    }
+    .abc{
+        justify-content: right;
+    }
+    .createLine{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1{
+            font-size: medium;
+        }
+    }
+    .fundooWord{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

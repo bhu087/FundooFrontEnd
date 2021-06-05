@@ -23,3 +23,22 @@
 .useFundooLine{
     margin-top: -12px;
 }
+@media (max-width: 600px) {
+    mat-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto !important;
+        height: auto !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        transition: none !important;
+        box-shadow: none !important;
+      }
+      .resetMain{
+        display: inline !important;
+    }
+    .resetInner{
+        width: 90%;
+    }
+}
