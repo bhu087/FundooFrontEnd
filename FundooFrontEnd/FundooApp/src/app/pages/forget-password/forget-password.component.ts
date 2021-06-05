@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { SnackBarService } from 'src/app/otherServices/snackBarService/snack-bar.service';
 import { UserServicesService } from 'src/app/services/userService/user-services.service';
 
 @Component({
@@ -10,7 +12,8 @@ import { UserServicesService } from 'src/app/services/userService/user-services.
 })
 export class ForgetPasswordComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private service: UserServicesService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private service: UserServicesService,
+    private snackbar: SnackBarService) { }
 
   ngOnInit(): void {
   }
@@ -19,13 +22,17 @@ export class ForgetPasswordComponent implements OnInit {
   });
 
   get forgettingForm() {return this.forgetForm.controls};
-
+  trigger(message:string, action:string)
+  {
+   this.snackbar.openSnackBar(message, action);
+  }
   OnForgetPassword(value: any){
     if (this.forgetForm.invalid) {
       return;
     }
     this.service.forget(value.email).subscribe((success)=> {
       this.router.navigateByUrl('/login');
+      this.trigger("Reset Link Sent", "Done");
     },
     (error)=> {
       alert('User Not Found');
