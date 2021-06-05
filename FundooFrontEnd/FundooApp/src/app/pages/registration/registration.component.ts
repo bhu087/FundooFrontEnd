@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { BackendServicesService } from 'src/app/backend-services.service';
+import { UserServicesService } from 'src/app/services/userService/user-services.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss'],
-  providers:[BackendServicesService]
+  providers:[UserServicesService]
 })
 export class RegistrationComponent implements OnInit {
   
   data: any;
-    constructor(private formBuilder: FormBuilder, private service: BackendServicesService, private router: Router) { 
+    constructor(private formBuilder: FormBuilder, private service: UserServicesService, private router: Router) { 
       
     }
     registerForm= this.formBuilder.group({
@@ -35,18 +36,13 @@ export class RegistrationComponent implements OnInit {
       return (formGroup: FormGroup) => {
           const control = formGroup.controls[password];
           const matchingControl = formGroup.controls[confirmPassword];
-          if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
-              return;
-          }
-          if (control.value !== matchingControl.value) {
-              matchingControl.setErrors({ confirmedValidator: true });
-          } else {
-              matchingControl.setErrors(null);
+          if(control.value !== matchingControl.value){
+            matchingControl.setErrors({ confirmedValidator: true });
           }
       }
     }
     OnRegistration(value:any){
-      if (this.registerForm.invalid || (value.password != value.confirmPassword)) {
+      if (this.registerForm.invalid) {
         return;
       }
       const register = {
@@ -55,7 +51,7 @@ export class RegistrationComponent implements OnInit {
         email: value.email,
         password: value.password
       }
-      this.service.registration(register).subscribe((success) =>{
+      this.service.register(register).subscribe((success) =>{
         this.data = JSON.stringify(success);
         console.log(this.data.userID);
         console.log(success);

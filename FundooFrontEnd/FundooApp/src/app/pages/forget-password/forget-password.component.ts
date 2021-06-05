@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BackendServicesService } from 'src/app/backend-services.service';
+import { Router } from '@angular/router';
+import { UserServicesService } from 'src/app/services/userService/user-services.service';
 
 @Component({
   selector: 'app-forget-password',
@@ -9,7 +10,7 @@ import { BackendServicesService } from 'src/app/backend-services.service';
 })
 export class ForgetPasswordComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private service: BackendServicesService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private service: UserServicesService) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +25,7 @@ export class ForgetPasswordComponent implements OnInit {
       return;
     }
     this.service.forget(value.email).subscribe((success)=> {
-      console.log(success);
+      this.router.navigateByUrl('/login');
     },
     (error)=> {
       alert('User Not Found');

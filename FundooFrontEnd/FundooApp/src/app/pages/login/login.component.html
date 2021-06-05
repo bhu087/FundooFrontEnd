@@ -1,4 +1,4 @@
-<div class="loginMain" fxLayoutAlign="center">
+<div class="loginMain" fxFill fxLayoutAlign="center">
     <form [formGroup]="loginForm" (ngSubmit)="OnLogin(loginForm.value)">
         <mat-card>
             <div class="innerLogin">
@@ -23,7 +23,7 @@
                     </h3>
                 </div>
                 <div class="userNameField">
-                    <mat-form-field class="longFormField" appearance="outline">
+                    <mat-form-field fxFill class="longFormField" appearance="outline">
                         <mat-label>UserName</mat-label>
                         <input matInput formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': loggingForm.email.errors }"/>
                         <mat-hint *ngIf="loggingForm.email.errors && loggingForm.email.touched">Email  is required & Valid Format</mat-hint>
@@ -37,7 +37,7 @@
                     </mat-form-field>
                 </div>
                 <div>
-                    <button class="forgetEmail">Forget email?</button>
+                    <button class="forgetEmail" (click)="OnClickForgetPassword()">Forget email?</button>
                 </div>
                 <br>
                 <br>

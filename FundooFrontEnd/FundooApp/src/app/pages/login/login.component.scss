@@ -1,11 +1,9 @@
 .mat-card{
-    width: 50vh;
-    padding-right: 60px;
-    padding-left: 60px;
+    width: 100%;
 }
 .loginMain{
     display: flex; 
-    margin: 70px; 
+    margin-top: 70px; 
     justify-content: center;
     align-items: center;
 }
@@ -60,4 +58,21 @@
     justify-content: space-between;
     padding-bottom: 20px;
     margin-left: -16px;
+}
+@media (max-width: 600px) {
+    mat-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      padding: 0 !important;
+      transition: none !important;
+      box-shadow: none !important;
+    }
+    .loginMain{
+        display: inline !important;
+    }
+    .innerLogin{
+        width: 90%;
+    }
 }
