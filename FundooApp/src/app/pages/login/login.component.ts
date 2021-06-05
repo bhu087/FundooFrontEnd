@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SnackBarService } from 'src/app/otherServices/snackBarService/snack-bar.service';
 import { UserServicesService } from 'src/app/services/userService/user-services.service';
 
 @Component({
@@ -11,7 +12,8 @@ import { UserServicesService } from 'src/app/services/userService/user-services.
 export class LoginComponent implements OnInit {
 
   data: any;
-  constructor(private formBuilder: FormBuilder, private router: Router, private service: UserServicesService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private service: UserServicesService,
+    private snackBar: SnackBarService) { }
   loginForm= this.formBuilder.group({
         email : ['', [Validators.required, Validators.email]],//,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
         password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(20),Validators.pattern("^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$")]],
@@ -19,6 +21,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   get loggingForm() { return this.loginForm.controls; }
+
+  triggerSnackBar(message:string, action:string)
+  {
+   this.snackBar.openSnackBar(message, action);
+  }
 
   OnClickCreateAccount(){
     this.router.navigateByUrl('/register');
@@ -38,11 +45,11 @@ export class LoginComponent implements OnInit {
       this.data = JSON.stringify(success);
       var res = JSON.parse(this.data);
       console.log(res['data']);
-      
+      this.triggerSnackBar("Logged In Successfully", "Done");
     },
     (error)=> {
       this.router.navigateByUrl('/login');
-      alert('User Not Found');
+      this.triggerSnackBar("Account Not exist", "Failed!");
     });
   }
 }

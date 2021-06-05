@@ -22,20 +22,24 @@ export class ForgetPasswordComponent implements OnInit {
   });
 
   get forgettingForm() {return this.forgetForm.controls};
-  trigger(message:string, action:string)
+
+
+  triggerSnackBar(message:string, action:string)
   {
    this.snackbar.openSnackBar(message, action);
   }
+
+
   OnForgetPassword(value: any){
     if (this.forgetForm.invalid) {
       return;
     }
     this.service.forget(value.email).subscribe((success)=> {
       this.router.navigateByUrl('/login');
-      this.trigger("Reset Link Sent", "Done");
+      this.triggerSnackBar("Reset Link Sent", "Done");
     },
     (error)=> {
-      alert('User Not Found');
+      this.triggerSnackBar("Account not exist in this account", "Failed!");
     });
   }
 }

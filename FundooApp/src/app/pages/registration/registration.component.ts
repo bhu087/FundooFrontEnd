@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Router } from '@angular/router';
 import { UserServicesService } from 'src/app/services/userService/user-services.service';
 import { Observable } from 'rxjs';
+import { SnackBarService } from 'src/app/otherServices/snackBarService/snack-bar.service';
 
 @Component({
   selector: 'app-registration',
@@ -13,7 +14,8 @@ import { Observable } from 'rxjs';
 export class RegistrationComponent implements OnInit {
   
   data: any;
-    constructor(private formBuilder: FormBuilder, private service: UserServicesService, private router: Router) { 
+    constructor(private formBuilder: FormBuilder, private service: UserServicesService, private router: Router,
+      private snackBar: SnackBarService) { 
       
     }
     registerForm= this.formBuilder.group({
@@ -41,6 +43,12 @@ export class RegistrationComponent implements OnInit {
           }
       }
     }
+
+    triggerSnackBar(message:string, action:string)
+    {
+     this.snackBar.openSnackBar(message, action);
+    }
+
     OnRegistration(value:any){
       if (this.registerForm.invalid) {
         return;
@@ -55,7 +63,7 @@ export class RegistrationComponent implements OnInit {
         this.data = JSON.stringify(success);
         console.log(this.data.userID);
         console.log(success);
-        alert(success);
+        this.triggerSnackBar("Registered", "Success");
       },
       (error)=>{
         console.log(error.message)
@@ -64,5 +72,6 @@ export class RegistrationComponent implements OnInit {
   }
   OnClickLogin(){
     this.router.navigateByUrl('/login');
+    this.triggerSnackBar("Not registered", "Failed!");
   }
 }
