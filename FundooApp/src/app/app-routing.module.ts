@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashBoardComponent } from './pages/dash-board/dash-board.component';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
@@ -9,7 +10,8 @@ const routes: Routes = [
   {path: 'register', component : RegistrationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'forget', component: ForgetPasswordComponent},
-  {path: 'reset', component: ResetComponent}
+  {path: 'reset', component: ResetComponent},
+  {path: 'dashboard', component: DashBoardComponent}
 ];
 
 @NgModule({
