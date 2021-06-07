@@ -29,8 +29,9 @@ export class ForgetPasswordComponent implements OnInit {
    this.snackbar.openSnackBar(message, action);
   }
 
-
+  submitted = false;
   OnForgetPassword(value: any){
+    this.submitted = true;
     if (this.forgetForm.invalid) {
       return;
     }
