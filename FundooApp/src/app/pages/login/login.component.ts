@@ -33,7 +33,10 @@ export class LoginComponent implements OnInit {
   OnClickForgetPassword(){
     this.router.navigateByUrl('/forget');
   }
+
+  submitted = false;
   OnLogin(value:any){
+    this.submitted = true;
     if (this.loggingForm.invalid) {
       return;
     }
