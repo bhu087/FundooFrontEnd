@@ -1,66 +1,56 @@
-.registerOuter{
-    margin: 40px;
-}
 .mat-card{
     width: 110vh;
     display: block;
     margin-left:auto;
     margin-right:auto;  
 }
-.outerDivision{
-    display: flex;
-}
-.fundooWord{
-    display: flex;
-}
-.registerMain{
-    padding: 48px 40px 36px;
-    width: 60%;
+.container{
+    margin: 40px;
+    .innerContainer{
+        padding: 48px 40px 36px;
+        width: 60%;
+        .fundooWord{
+            display: flex;
+        }
+        .createLine{
+            color: #202124;
+            padding-top: 16px;
+            font-family: 'Google Sans';
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.3333;
+        }
+        .firstLastName{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .emailHint{
+            font-size: 15px;
+        }
+        .password{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .buttons{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
 .fundooFont{
     font-size: 25px;
     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
 }
-.createLine{
-    color: #202124;
-    padding-top: 16px;
-    font-family: 'Google Sans';
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.3333;
-}
-.firstLastName{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
 .longFormField{
     width: 200%;
 }
 .widthFormField{
     font-size: 12px;
 }
-.emailHint{
-    font-size: 15px;
-}
-.password{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.removeTopMargin{
-    margin: 0px;
-}
-.buttons{
-    display: flex;
-    justify-content: space-between;
-}
-.registerLogo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
+
 @media (max-width: 600px) {
     .mat-card{
         width: auto !important;
@@ -72,10 +62,10 @@
         transition: none !important;
         box-shadow: none !important;
     }
-    .registerOuter{
+    .container{
         margin: 0 !important;
     }
-    .registerMain{
+    .innerContainer{
         width: auto !important;
         padding: 18px 21px;
     }
