@@ -43,8 +43,12 @@ export class ResetComponent implements OnInit {
    this.snackBar.openSnackBar(message, action);
   }
 
+  submitted = false;
   token : any;
   OnClickReset(value: any){
+    if(this.resettingForm.invalid){
+      return;
+    }
     this.activeRouter.queryParams.subscribe(params => {
       this.token = params['token'];
   });
