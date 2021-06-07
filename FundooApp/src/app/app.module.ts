@@ -17,6 +17,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 import { ResetComponent } from './pages/reset/reset.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { DashBoardComponent } from './pages/dash-board/dash-board.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     RegistrationComponent,
     LoginComponent,
     ForgetPasswordComponent,
-    ResetComponent
+    ResetComponent,
+    DashBoardComponent
   ],
   imports: [
     BrowserModule,

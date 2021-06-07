@@ -46,6 +46,7 @@ export class ResetComponent implements OnInit {
   submitted = false;
   token : any;
   OnClickReset(value: any){
+    this.submitted = true;
     if(this.resettingForm.invalid){
       return;
     }
