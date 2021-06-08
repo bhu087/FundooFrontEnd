@@ -28,6 +28,7 @@ import { TrashIconComponent } from './components/trash-icon/trash-icon.component
 import { TakeNoteComponent } from './components/take-note/take-note.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { IconsComponent } from './components/icons/icons.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     ArchiveIconComponent,
     TrashIconComponent,
     TakeNoteComponent,
-    DrawerComponent
+    DrawerComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,

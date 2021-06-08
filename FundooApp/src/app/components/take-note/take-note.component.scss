@@ -5,9 +5,19 @@ mat-form-field{
     box-shadow: none !important;
 }
 mat-expansion-panel{
-    width: 60%;
+    width: 80%;
     margin-top: 50px;
 }
 ::ng-deep .mat-form-field-underline {
     display: none;
+}
+.action-row{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+}
+.mat-action-row {
+    padding: 0px 0px 0px 0px !important;
+    border-top-style : hidden !important;
 }

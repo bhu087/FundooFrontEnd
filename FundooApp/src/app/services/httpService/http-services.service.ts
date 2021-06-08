@@ -10,7 +10,7 @@ export class HttpServicesService {
   constructor(private http: HttpClient) { }
 
   post(uri: any, data: any, isHeaders: any = false, headers : any = null){
-    console.log(uri, data, headers, isHeaders);
+    console.log("Uri"+uri, data, headers, isHeaders);
     return this.http.post(uri, data, isHeaders && headers);
   }
   

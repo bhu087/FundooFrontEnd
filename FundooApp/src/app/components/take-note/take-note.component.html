@@ -33,20 +33,25 @@
     </span>
     </div>
     </form> -->
-
-        <mat-expansion-panel class="expansion-box" (click)="togglePanelTitle()">
+<form [formGroup]="createNote" >
+        <mat-expansion-panel class="expansion-box" (click)="togglePanelTitle()"  hideToggle>
           <mat-expansion-panel-header *ngIf="panelTitle">
             <mat-panel-title>
               Take Note...
             </mat-panel-title>
           </mat-expansion-panel-header>
       
-          <mat-form-field>
-            <input matInput placeholder="Title">
+          <mat-form-field *ngIf="collapseExpansion">
+            <input matInput placeholder="Title" formControlName="title">
           </mat-form-field>
       
-          <mat-form-field>
-            <input matInput placeholder="Take a Note">
+          <mat-form-field *ngIf="collapseExpansion">
+            <input matInput placeholder="Take a Note" formControlName="note">
           </mat-form-field>
-      
+          <mat-action-row *ngIf="collapseExpansion">
+              <app-icons></app-icons>
+              <div fxFlex></div>
+              <button mat-button (click)="onKey(createNote.value)">Close</button>
+          </mat-action-row>
         </mat-expansion-panel>
+    </form>
