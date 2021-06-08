@@ -25,6 +25,8 @@ import { NotesIconComponent } from './components/notes-icon/notes-icon.component
 import { RemainderIconComponent } from './components/remainder-icon/remainder-icon.component';
 import { ArchiveIconComponent } from './components/archive-icon/archive-icon.component';
 import { TrashIconComponent } from './components/trash-icon/trash-icon.component';
+import { TakeNoteComponent } from './components/take-note/take-note.component';
+import { DrawerComponent } from './components/drawer/drawer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { TrashIconComponent } from './components/trash-icon/trash-icon.component
     NotesIconComponent,
     RemainderIconComponent,
     ArchiveIconComponent,
-    TrashIconComponent
+    TrashIconComponent,
+    TakeNoteComponent,
+    DrawerComponent
   ],
   imports: [
     BrowserModule,
