@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
+import { ArchiveIconComponent } from './../../components/archive-icon/archive-icon.component';
+import { NotesIconComponent } from './../../components/notes-icon/notes-icon.component';
+import { RemainderIconComponent } from './../../components/remainder-icon/remainder-icon.component';
+import { TrashIconComponent } from './../../components/trash-icon/trash-icon.component';
 
 @Component({
   selector: 'app-dash-board',
@@ -7,9 +12,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashBoardComponent implements OnInit {
   showDrawer = false;
+  matBtn = "mat-after-expand";
   constructor() { }
 
   ngOnInit(): void {
   }
-
+ showDrawerToggle(){
+   if(this.showDrawer){
+    this.showDrawer = false;
+    this.matBtn = "mat-before-expand";
+   }
+   else{
+     this.showDrawer = true;
+     this.matBtn = "mat-after-expand";
+   }
+ }
 }

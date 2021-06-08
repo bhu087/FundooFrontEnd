@@ -1,7 +1,7 @@
 
 <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" >
     <div fxLayout="row" class="fundoo-menu-icons" fxLayoutAlign="space-between center">
-        <button (click)="drawer.toggle()" mat-icon-button><mat-icon>dehaze</mat-icon></button>
+        <button (click)="showDrawerToggle()" mat-icon-button><mat-icon>dehaze</mat-icon></button>
         <mat-icon class="fundoo-icon">file_copy</mat-icon>
         <h1>Fundoo</h1>
     </div>
@@ -17,12 +17,19 @@
   </mat-toolbar>
  <!--////////////////-->
  <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-drawer class="example-sidenav" opened="true" mode="side">
         <div class="sideNav">
-            <button mat-button>Notes</button>
-            <button mat-button>Remainders</button>
-            <button mat-button>Archive</button>
-            <button mat-button>Trash</button>
+            <div class="drawer-menu">
+                <button mat-button>
+                    <span>
+                        <div id="btn-icon"><app-notes-icon></app-notes-icon></div>
+                        <div id="btn-name" *ngIf="showDrawer">Notes</div>
+                    </span>
+                </button>
+            </div>  
+            <div class="drawer-menu"><button mat-button><div id="btn-icon"><app-remainder-icon></app-remainder-icon></div><div id="btn-name" *ngIf="showDrawer">Remainders</div></button></div>
+            <div class="drawer-menu"><button mat-button><div id="btn-icon"><app-archive-icon></app-archive-icon></div><div id="btn-name" *ngIf="showDrawer">Archive</div></button></div>
+            <div class="drawer-menu"><button mat-button><div id="btn-icon"><app-trash-icon></app-trash-icon></div><div id="btn-name" *ngIf="showDrawer">Trash</div></button></div>
         </div>
     </mat-drawer>
   </mat-drawer-container>

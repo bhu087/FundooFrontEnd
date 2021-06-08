@@ -25,7 +25,7 @@
         width: 90%;
     }
     ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-        background-color: rgb(231, 227, 227);
+        background-color: rgb(245, 239, 239);
         border-radius: 0px;
     }
     .mat-form-field{
@@ -51,19 +51,30 @@
   .example-sidenav {
     width: 30%;
   }
-  .sideNav{
+.sideNav{
       width: 100%;
       border-color: white;
+      .drawer-menu{ 
+        display: flex !important;
+    }
+    #btn-icon{
+        float: left;
+    }
+    #btn-name{
+        float: right;
+        padding-left: 25px;
+        font-size: 15px;
+    }
       button{
-          width: 100%;
+          width: 70%;
           height: 60px !important;
           color: black !important;
           border-radius:0 50px 50px 0;
-      }
+        }
       button:focus{
           background-color: rgb(255, 196, 1);
       }
-  }
+}
   .mat-drawer{
       border-right: white;
 }
@@ -71,3 +82,14 @@
     background-color: white !important;
 }
  
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    display: flex !important;
+    align-items: center;
+}
+.mat-button-wrapper{
+    display: inline !important;
+}
+::ng-deep .mat-icon {
+    vertical-align: middle;
+}
