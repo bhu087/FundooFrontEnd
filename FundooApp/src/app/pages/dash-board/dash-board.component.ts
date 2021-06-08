@@ -4,6 +4,7 @@ import { ArchiveIconComponent } from './../../components/archive-icon/archive-ic
 import { NotesIconComponent } from './../../components/notes-icon/notes-icon.component';
 import { RemainderIconComponent } from './../../components/remainder-icon/remainder-icon.component';
 import { TrashIconComponent } from './../../components/trash-icon/trash-icon.component';
+import { TakeNoteComponent } from './../../components/take-note/take-note.component'
 
 @Component({
   selector: 'app-dash-board',

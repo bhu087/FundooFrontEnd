@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-take-note',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./take-note.component.scss']
 })
 export class TakeNoteComponent implements OnInit {
-
   constructor() { }
-
+  collapsed : boolean = false;
+  panelTitle: boolean = true;
   ngOnInit(): void {
   }
-
+  togglePanelTitle(){
+    this.panelTitle = false;
+  }
 }

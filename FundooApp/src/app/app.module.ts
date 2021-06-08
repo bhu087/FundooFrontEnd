@@ -27,6 +27,7 @@ import { ArchiveIconComponent } from './components/archive-icon/archive-icon.com
 import { TrashIconComponent } from './components/trash-icon/trash-icon.component';
 import { TakeNoteComponent } from './components/take-note/take-note.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { DrawerComponent } from './components/drawer/drawer.component';
     FlexLayoutModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
