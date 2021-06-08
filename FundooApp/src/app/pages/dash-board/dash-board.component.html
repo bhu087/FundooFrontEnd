@@ -1,0 +1,28 @@
+
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" >
+    <div fxLayout="row" class="fundoo-menu-icons" fxLayoutAlign="space-between center">
+        <button (click)="drawer.toggle()" mat-icon-button><mat-icon>dehaze</mat-icon></button>
+        <mat-icon class="fundoo-icon">file_copy</mat-icon>
+        <h1>Fundoo</h1>
+    </div>
+    <div class="search-field">
+        <mat-form-field appearance="outline">
+            <mat-icon>search</mat-icon>
+            <input matInput placeholder="search">
+          </mat-form-field>
+    </div>
+    <div>
+        <button mat-button matTooltip="Fundoo Account"><mat-icon>account_circle</mat-icon></button>
+    </div>
+  </mat-toolbar>
+ <!--////////////////-->
+ <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <div class="sideNav">
+            <button mat-button>Notes</button>
+            <button mat-button>Remainders</button>
+            <button mat-button>Archive</button>
+            <button mat-button>Trash</button>
+        </div>
+    </mat-drawer>
+  </mat-drawer-container>

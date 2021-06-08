@@ -17,6 +17,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { ForgetPasswordComponent } from './pages/forget-password/forget-password.component';
 import { ResetComponent } from './pages/reset/reset.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { DashBoardComponent } from './pages/dash-board/dash-board.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { NotesIconComponent } from './components/notes-icon/notes-icon.component';
+import { RemainderIconComponent } from './components/remainder-icon/remainder-icon.component';
+import { ArchiveIconComponent } from './components/archive-icon/archive-icon.component';
+import { TrashIconComponent } from './components/trash-icon/trash-icon.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +32,12 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     RegistrationComponent,
     LoginComponent,
     ForgetPasswordComponent,
-    ResetComponent
+    ResetComponent,
+    DashBoardComponent,
+    NotesIconComponent,
+    RemainderIconComponent,
+    ArchiveIconComponent,
+    TrashIconComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +52,10 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

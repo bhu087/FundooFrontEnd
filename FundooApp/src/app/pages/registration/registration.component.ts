@@ -65,9 +65,11 @@ export class RegistrationComponent implements OnInit {
         console.log(this.data.userID);
         console.log(success);
         this.triggerSnackBar("Registered", "Success");
+        this.router.navigateByUrl('/login');
       },
       (error)=>{
-        console.log(error.message)
+        this.triggerSnackBar("Account already Exists", "Failed!");
+        //window.location.reload();
       }
     );
   }
