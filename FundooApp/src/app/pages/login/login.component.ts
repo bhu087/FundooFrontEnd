@@ -48,7 +48,9 @@ export class LoginComponent implements OnInit {
       this.data = JSON.stringify(success);
       var res = JSON.parse(this.data);
       console.log(res['data']);
+      localStorage.setItem("Bearer", res['data']);
       this.triggerSnackBar("Logged In Successfully", "Done");
+      this.router.navigateByUrl('/dashboard');
     },
     (error)=> {
       this.router.navigateByUrl('/login');

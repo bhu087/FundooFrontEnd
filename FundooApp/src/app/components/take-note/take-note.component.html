@@ -34,24 +34,25 @@
     </div>
     </form> -->
 <form [formGroup]="createNote" >
-        <mat-expansion-panel class="expansion-box" (click)="togglePanelTitle()"  hideToggle>
-          <mat-expansion-panel-header *ngIf="panelTitle">
+        <mat-expansion-panel class="expansion-box" [expanded]="panelOpenState" hideToggle>
+          <mat-expansion-panel-header>
             <mat-panel-title>
-              Take Note...
+              <h1 *ngIf="collapsed"> Take Note... </h1>
             </mat-panel-title>
           </mat-expansion-panel-header>
       
-          <mat-form-field *ngIf="collapseExpansion">
+          <mat-form-field>
             <input matInput placeholder="Title" formControlName="title">
           </mat-form-field>
       
-          <mat-form-field *ngIf="collapseExpansion">
+          <mat-form-field>
             <input matInput placeholder="Take a Note" formControlName="note">
           </mat-form-field>
-          <mat-action-row *ngIf="collapseExpansion">
+          <mat-action-row>
               <app-icons></app-icons>
               <div fxFlex></div>
               <button mat-button (click)="onKey(createNote.value)">Close</button>
           </mat-action-row>
         </mat-expansion-panel>
     </form>
+    <app-display-notes></app-display-notes>

@@ -17,19 +17,18 @@ export class TakeNoteComponent implements OnInit {
     title: ['', [Validators.required]]
   });
 
-  collapsed : boolean = false;
-  collapseExpansion: boolean = true;
-  panelTitle: boolean = true;
+  collapsed : boolean = true;
   ngOnInit(): void {
   }
-  togglePanelTitle(){
-    this.panelTitle = false;
+  panelOpenState: boolean = false;
+  togglePanel() {
+    this.panelOpenState = !this.panelOpenState
   }
   onKey(value: any){
+    this.panelOpenState = false;
     if(this.createNote.invalid){
       return;
     }
-    this.panelTitle = true;
     console.log("take note.ts");
     const Note = {
       title : value.title,

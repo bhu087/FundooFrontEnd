@@ -16,24 +16,9 @@
     </div>
   </mat-toolbar>
  <!--////////////////-->
- <mat-drawer-container class="example-container" autosize>
-    <mat-drawer class="example-sidenav" opened="true" mode="side">
-        <div class="sideNav">
-            <div class="drawer-menu">
-                <button mat-button>
-                    <span>
-                        <div id="btn-icon"><app-notes-icon></app-notes-icon></div>
-                        <div id="btn-name" *ngIf="showDrawer">Notes</div>
-                    </span>
-                </button>
-            </div>  
-            <div class="drawer-menu"><button mat-button><div id="btn-icon"><app-remainder-icon></app-remainder-icon></div><div id="btn-name" *ngIf="showDrawer">Remainders</div></button></div>
-            <div class="drawer-menu"><button mat-button><div id="btn-icon"><app-archive-icon></app-archive-icon></div><div id="btn-name" *ngIf="showDrawer">Archive</div></button></div>
-            <div class="drawer-menu"><button mat-button><div id="btn-icon"><app-trash-icon></app-trash-icon></div><div id="btn-name" *ngIf="showDrawer">Trash</div></button></div>
-        </div>
-    </mat-drawer>
-    <div class="take-note">
-        <app-take-note></app-take-note>
-    </div>
-  </mat-drawer-container>
-  
+
+  <app-drawer></app-drawer>
+  <app-display-notes></app-display-notes>
+  <!-- <div *ngFor="let item of notes">
+    <mat-card>{{item}}</mat-card>
+  </div> -->

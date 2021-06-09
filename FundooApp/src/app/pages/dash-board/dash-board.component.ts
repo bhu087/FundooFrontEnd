@@ -1,9 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
-import { ArchiveIconComponent } from './../../components/archive-icon/archive-icon.component';
-import { NotesIconComponent } from './../../components/notes-icon/notes-icon.component';
-import { RemainderIconComponent } from './../../components/remainder-icon/remainder-icon.component';
-import { TrashIconComponent } from './../../components/trash-icon/trash-icon.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DisplayNotesComponent } from 'src/app/components/display-notes/display-notes.component';
+import { DrawerComponent } from 'src/app/components/drawer/drawer.component';
 import { TakeNoteComponent } from './../../components/take-note/take-note.component'
 
 @Component({
@@ -12,20 +9,19 @@ import { TakeNoteComponent } from './../../components/take-note/take-note.compon
   styleUrls: ['./dash-board.component.scss']
 })
 export class DashBoardComponent implements OnInit {
-  showDrawer = false;
-  matBtn = "mat-after-expand";
+  @ViewChild(DrawerComponent)
+  private drawer!: DrawerComponent;
+
+  @ViewChild(DisplayNotesComponent) private displayNotes!: DisplayNotesComponent;
   constructor() { }
 
   ngOnInit(): void {
+    
+  }
+  onClick(){
+    console.log(this.displayNotes.getNotes());
   }
  showDrawerToggle(){
-   if(this.showDrawer){
-    this.showDrawer = false;
-    this.matBtn = "mat-before-expand";
-   }
-   else{
-     this.showDrawer = true;
-     this.matBtn = "mat-after-expand";
-   }
+   this.drawer.showDrawerToggle();
  }
 }

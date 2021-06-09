@@ -8,7 +8,7 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class NotesServicesService {
  
-  options = {
+  header = {
     headers: new HttpHeaders({
       'authorization': `Bearer ${localStorage.Bearer}`,
       'content-Type': 'application/json'
@@ -18,7 +18,12 @@ export class NotesServicesService {
   constructor(private httpservice: HttpServicesService) { }
   create(data:any){
     console.log(data);
-    var res = this.httpservice.post(`${this.url}Notes`, data, true, this.options);
+    var res = this.httpservice.post(`${this.url}Notes`, data, true, this.header);
+    console.log(res);
+    return res;
+  }
+  getNotes(){
+    var res = this.httpservice.get(`${this.url}Notes/allNotes`, true, this.header);
     console.log(res);
     return res;
   }

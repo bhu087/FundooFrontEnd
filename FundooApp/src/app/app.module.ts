@@ -21,14 +21,12 @@ import { DashBoardComponent } from './pages/dash-board/dash-board.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { NotesIconComponent } from './components/notes-icon/notes-icon.component';
-import { RemainderIconComponent } from './components/remainder-icon/remainder-icon.component';
-import { ArchiveIconComponent } from './components/archive-icon/archive-icon.component';
-import { TrashIconComponent } from './components/trash-icon/trash-icon.component';
 import { TakeNoteComponent } from './components/take-note/take-note.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { IconsComponent } from './components/icons/icons.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +36,11 @@ import { IconsComponent } from './components/icons/icons.component';
     ForgetPasswordComponent,
     ResetComponent,
     DashBoardComponent,
-    NotesIconComponent,
-    RemainderIconComponent,
-    ArchiveIconComponent,
-    TrashIconComponent,
     TakeNoteComponent,
     DrawerComponent,
-    IconsComponent
+    IconsComponent,
+    NotesComponent,
+    DisplayNotesComponent
   ],
   imports: [
     BrowserModule,

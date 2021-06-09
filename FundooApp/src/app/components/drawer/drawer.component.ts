@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./drawer.component.scss']
 })
 export class DrawerComponent implements OnInit {
-
+  showDrawer = false;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  showDrawerToggle(){
+    if(this.showDrawer){
+     this.showDrawer = false;
+    }
+    else{
+      this.showDrawer = true;
+    }
+  }
 }
