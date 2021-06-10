@@ -27,6 +27,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { IconsComponent } from './components/icons/icons.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
+import { AuthGuard } from './services/authGuardService/auth.guard';
+import {MatListModule} from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -59,9 +62,10 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatListModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

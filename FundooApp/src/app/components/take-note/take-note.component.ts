@@ -22,17 +22,25 @@ export class TakeNoteComponent implements OnInit {
   }
   panelOpenState: boolean = false;
   togglePanel() {
+    if(this.panelOpenState){
+      this.collapsed = !this.collapsed
+    }
     this.panelOpenState = !this.panelOpenState
   }
+  collapseMatTitle(){
+    this.collapsed = !this.collapsed;
+  }
   onKey(value: any){
-    this.panelOpenState = false;
+    
     if(this.createNote.invalid){
       return;
     }
     console.log("take note.ts");
+    const currentDate = new Date();
     const Note = {
       title : value.title,
-      description : value.note
+      description : value.note,
+      createdTime : currentDate.toDateString
     }
     this.service.create(Note).subscribe((serve)=>{
       console.log(serve);

@@ -1,24 +1,47 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxLayout="row" class="fundoo-menu-icons" fxLayoutAlign="space-between center">
+    <button (click)="showDrawerToggle()" mat-icon-button>
+      <mat-icon>dehaze</mat-icon>
+    </button>
+    <mat-icon class="fundoo-icon">file_copy</mat-icon>
+    <h1>Fundoo</h1>
+  </div>
+  <div class="search-field">
+    <mat-form-field appearance="outline">
+      <mat-icon>search</mat-icon>
+      <input matInput placeholder="search">
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-button matTooltip="Fundoo Account">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
 
-<mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" >
-    <div fxLayout="row" class="fundoo-menu-icons" fxLayoutAlign="space-between center">
-        <button (click)="showDrawerToggle()" mat-icon-button><mat-icon>dehaze</mat-icon></button>
-        <mat-icon class="fundoo-icon">file_copy</mat-icon>
-        <h1>Fundoo</h1>
-    </div>
-    <div class="search-field">
-        <mat-form-field appearance="outline">
-            <mat-icon>search</mat-icon>
-            <input matInput placeholder="search">
-          </mat-form-field>
-    </div>
-    <div>
-        <button mat-button matTooltip="Fundoo Account"><mat-icon>account_circle</mat-icon></button>
-    </div>
-  </mat-toolbar>
- <!--////////////////-->
-
-  <app-drawer></app-drawer>
-  <app-display-notes></app-display-notes>
-  <!-- <div *ngFor="let item of notes">
-    <mat-card>{{item}}</mat-card>
-  </div> -->
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer class="example-sidenav" opened="true" mode="side">
+      <div class="sideNav">
+          <div class="drawer-menu">
+              <button mat-button>
+                  <span>
+                      <div id="btn-icon"><mat-icon>emoji_objects</mat-icon>
+                      </div>
+                      <div id="btn-name" *ngIf="showDrawer">Notes</div>
+                  </span>
+              </button>
+          </div>  
+          <div class="drawer-menu"><button mat-button><div id="btn-icon"><mat-icon>add_alert</mat-icon>
+          </div><div id="btn-name" *ngIf="showDrawer">Remainders</div></button></div>
+          <div class="drawer-menu"><button mat-button><div id="btn-icon"><mat-icon>archive</mat-icon>
+          </div><div id="btn-name" *ngIf="showDrawer">Archive</div></button></div>
+          <div class="drawer-menu"><button mat-button><div id="btn-icon"><mat-icon>delete_outline</mat-icon>
+          </div><div id="btn-name" *ngIf="showDrawer">Trash</div></button></div>
+      </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="notes-container">
+      <app-notes (messageEvent)="receiveMessage($event)"></app-notes>
+  </div>
+  </mat-drawer-content>
+</mat-drawer-container>

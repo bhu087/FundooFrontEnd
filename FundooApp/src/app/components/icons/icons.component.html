@@ -1,6 +1,20 @@
-<button mat-button><mat-icon>add_alert</mat-icon></button>
-<button mat-button><mat-icon>person_add</mat-icon></button>
-<button mat-button><mat-icon>color_lens</mat-icon></button>
-<button mat-button><mat-icon>image</mat-icon></button>
-<button mat-button><mat-icon>archive</mat-icon></button>
-<button mat-button><mat-icon>more_vert</mat-icon></button>
+<div class="icon-container">
+    <button mat-button *ngIf = "showButton">
+        <mat-icon>add_alert</mat-icon>
+    </button>
+    <button mat-button *ngIf = "showButton">
+        <mat-icon>person_add</mat-icon>
+    </button>
+    <button mat-button *ngIf = "showButton">
+        <mat-icon>color_lens</mat-icon>
+    </button>
+    <button mat-button *ngIf = "showButton">
+        <mat-icon>image</mat-icon>
+    </button>
+    <button mat-button *ngIf = "showButton">
+        <mat-icon>archive</mat-icon>
+    </button>
+    <button mat-button *ngIf = "showButton">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+</div>

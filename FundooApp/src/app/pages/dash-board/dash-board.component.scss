@@ -93,3 +93,12 @@
 ::ng-deep .mat-icon {
     vertical-align: middle;
 }
+
+
+//////////////////
+
+::ng-deep mat-drawer-content{
+    display: flex;
+    justify-content: start;
+    flex-direction: row-reverse;
+}

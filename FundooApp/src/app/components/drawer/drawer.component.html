@@ -1,4 +1,4 @@
-<mat-drawer-container class="example-container" autosize>
+<!-- <mat-drawer-container class="example-container" autosize>
     <mat-drawer class="example-sidenav" opened="true" mode="side">
         <div class="sideNav">
             <div class="drawer-menu">
@@ -21,4 +21,34 @@
     <div class="take-note">
         <app-notes></app-notes>
     </div>
+  </mat-drawer-container>-->
+
+
+ <!-- <div class="sidenavdiv">
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side" opened>
+      <mat-nav-list class="list">
+        <a mat-list-item class="notes" (click)="notes()">
+          <mat-icon>emoji_objects</mat-icon>
+          Notes
+        </a>
+        <a mat-list-item class="notes" (click)="reminder()">
+          <mat-icon>notifications</mat-icon>
+            Reminders
+        </a>
+        <a mat-list-item class="notes" (click)="archive()">
+          <mat-icon>archive</mat-icon>
+          Archive
+        </a>
+        <a mat-list-item class="notes" (click)="trash()">
+          <mat-icon>delete</mat-icon>
+            Trash
+        </a> 
+      </mat-nav-list>
+    </mat-drawer>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
   </mat-drawer-container>
+</div>
+-->
