@@ -39,16 +39,16 @@
     }
 }
 
-
+// drawer container //
 .drawer-container {
     width: 100%;
     height: 100%;
     background-color: white !important;
   }
 
-  
+// side nav //
   .drawer-sidenav {
-    width: 30%;
+    width: 20%;
   }
 .sideNav{
       width: 100%;
@@ -60,12 +60,12 @@
         float: left;
     }
     #btn-name{
-        float: right;
+        float: left;
         padding-left: 25px;
         font-size: 15px;
     }
       button{
-          width: 70%;
+          width: 100%;
           height: 60px !important;
           color: black !important;
           border-radius:0 50px 50px 0;
@@ -73,10 +73,19 @@
       button:focus{
           background-color: rgb(255, 196, 1);
       }
+      .active{
+        background-color: rgb(255, 196, 1);
+      }
 }
   .mat-drawer{
       border-right: white;
 }
+
+//notes icon //
+.notes-icon{
+    vertical-align: middle;
+}
+
 ::ng-deep .mat-drawer-contentainer {
     background-color: white !important;
 }
@@ -97,5 +106,9 @@
     }
     .search-icon-responsive{
         display: block !important;
+    }
+    // button names //
+    #btn-name{
+        display: none !important;
     }
 }

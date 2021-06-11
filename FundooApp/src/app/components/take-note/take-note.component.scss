@@ -1,11 +1,17 @@
-
+.take-notes-container{
+    display: flex;
+    justify-content: center;
+}
+.expansion-box{
+    flex-grow: 1;
+}
 mat-form-field{
     display: inline;
     border-bottom-color: transparent !important;
     box-shadow: none !important;
 }
 mat-expansion-panel{
-    width: 80%;
+    width: 170%;
     margin-top: 50px;
 }
 ::ng-deep .mat-form-field-underline {
@@ -20,4 +26,11 @@ align-items: center;
 .mat-action-row {
     padding: 0px 0px 0px 0px !important;
     border-top-style : hidden !important;
+}
+
+@media (max-width: 600px) {
+    mat-expansion-panel{
+        width: 100%;
+        margin-top: 50px;
+    }
 }

@@ -33,25 +33,28 @@
     </span>
     </div>
     </form> -->
-<form [formGroup]="createNote" >
-        <mat-expansion-panel class="expansion-box" #mep="matExpansionPanel" hideToggle>
-          <mat-expansion-panel-header (click)="collapsed=!collapsed">
-            <mat-panel-title>
-              <h2 *ngIf="collapsed"> Take Note... </h2>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-      
-          <mat-form-field [floatLabel]="'never'">
-            <input matInput placeholder="Title" formControlName="title">
-          </mat-form-field>
-      
-          <mat-form-field [floatLabel]="'never'">
-            <input matInput placeholder="Take a Note" formControlName="note">
-          </mat-form-field>
-          <mat-action-row>
-              <app-icons></app-icons>
-              <div fxFlex></div>
-              <button mat-button (click)="collapsed=!collapsed; mep.expanded = !mep.expanded; onKey(createNote.value);">Close</button>
-          </mat-action-row>
-        </mat-expansion-panel>
-    </form>
+<div class="take-notes-container">
+  <form [formGroup]="createNote">
+    <mat-expansion-panel class="expansion-box" #mep="matExpansionPanel" hideToggle>
+      <mat-expansion-panel-header (click)="collapsed=!collapsed">
+        <mat-panel-title>
+          <h2 *ngIf="collapsed"> Take Note... </h2>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-form-field [floatLabel]="'never'">
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+
+      <mat-form-field [floatLabel]="'never'">
+        <input matInput placeholder="Take a Note" formControlName="note">
+      </mat-form-field>
+      <mat-action-row>
+        <app-icons></app-icons>
+        <div fxFlex></div>
+        <button mat-button
+          (click)="collapsed=!collapsed; mep.expanded = !mep.expanded; onKey(createNote.value);">Close</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </form>
+</div>
