@@ -1,6 +1,7 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { EventEmitter } from "@angular/core";
 import { NotesServicesService } from 'src/app/services/notesService/notes-services.service';
+import { NotesComponent } from '../notes/notes.component';
 
 @Component({
   selector: 'app-display-notes',
@@ -9,15 +10,9 @@ import { NotesServicesService } from 'src/app/services/notesService/notes-servic
 })
 export class DisplayNotesComponent implements OnInit {
   data:any;
-  allNotes:any=[];
+  @Input() allNotes: any[]= [];
   constructor(private service: NotesServicesService) { }
   showButton: boolean = false;
   ngOnInit(): void {
-    console.log("get note.ts");
-    this.service.getNotes().subscribe((service)=>{
-      this.data = JSON.stringify(service);
-      var res = JSON.parse(this.data);
-      this.allNotes = res['response'];
-    });
   }
 }

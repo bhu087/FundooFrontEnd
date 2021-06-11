@@ -32,6 +32,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponentComponent } from './components/dialog-component/dialog-component.component';
 import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -70,7 +72,9 @@ import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.
     MatSidenavModule,
     MatExpansionModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule,
+    MatMenuModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

@@ -15,10 +15,6 @@ export class DashBoardComponent implements OnInit {
   archive = false;
   allNotes:any =[];
   archivedNotes:any =[];
-  activeArchive(){
-    this.notes = false;
-    this.archive = true;
-  }
   openDialog(){
     let dialogRef = this.dialog.open(DialogComponentComponent);
   }
@@ -37,6 +33,7 @@ export class DashBoardComponent implements OnInit {
    this.showDrawer = !this.showDrawer;
  }
  archiveNotes(event:any[]){
+   console.log("COme here");
   console.log(event);
  }
  message:any = [];

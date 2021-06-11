@@ -2,13 +2,14 @@
     padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: row-reverse;
 }
 mat-card{
     min-width: 225px;
     min-height: 105px;
     margin-top: 50px;
+    margin-right: 10px;
 }
 app-icons{
     display: none;
