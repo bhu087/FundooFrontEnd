@@ -10,7 +10,6 @@ import { NotesServicesService } from 'src/app/services/notesService/notes-servic
 export class DisplayNotesComponent implements OnInit {
   data:any;
   allNotes:any=[];
-  @Output() notes: EventEmitter<any[]> = new EventEmitter<any[]>();
   constructor(private service: NotesServicesService) { }
   showButton: boolean = false;
   ngOnInit(): void {
@@ -19,10 +18,6 @@ export class DisplayNotesComponent implements OnInit {
       this.data = JSON.stringify(service);
       var res = JSON.parse(this.data);
       this.allNotes = res['response'];
-      this.notes.emit(this.allNotes);
     });
-  }
-  getNotes(notes: any){
-    this.notes.emit(this.allNotes);
   }
 }

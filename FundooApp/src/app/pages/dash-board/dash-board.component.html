@@ -46,7 +46,7 @@
           </div>
           <div id="btn-name" *ngIf="showDrawer">Remainders</div>
         </button></div>
-      <div class="drawer-menu"><button mat-button (click)="activeArchive()">
+      <div class="drawer-menu"><button mat-button routerLink="archive" (click)="activeArchive()">
           <div id="btn-icon">
             <mat-icon>archive</mat-icon>
           </div>
@@ -61,11 +61,12 @@
     </div>
   </mat-drawer>
   <mat-drawer-content>
-    <div class="notes-container">
-      <app-notes (messageEvent)="receiveMessage($event)" *ngIf="notes"></app-notes>
+    <div>
+      <router-outlet></router-outlet>
+      <!-- <app-notes *ngIf="notes"></app-notes>
       <div class="notes-container">
         <app-archive-notes (archiveNotes)="archiveNotes($event)" *ngIf="archive"></app-archive-notes>
-      </div>
+      </div> -->
     </div>
   </mat-drawer-content>
 </mat-drawer-container>
