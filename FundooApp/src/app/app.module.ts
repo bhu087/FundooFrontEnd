@@ -29,6 +29,9 @@ import { NotesComponent } from './components/notes/notes.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { AuthGuard } from './services/authGuardService/auth.guard';
 import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponentComponent } from './components/dialog-component/dialog-component.component';
+import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.component';
 
 
 @NgModule({
@@ -43,8 +46,11 @@ import {MatListModule} from '@angular/material/list';
     DrawerComponent,
     IconsComponent,
     NotesComponent,
-    DisplayNotesComponent
+    DisplayNotesComponent,
+    DialogComponentComponent,
+    ArchiveNotesComponent
   ],
+  entryComponents:[DialogComponentComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -63,7 +69,8 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     MatSidenavModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

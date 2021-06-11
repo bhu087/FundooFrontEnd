@@ -17,13 +17,15 @@ export class NotesServicesService {
   url = environment.baseUrl;
   constructor(private httpservice: HttpServicesService) { }
   create(data:any){
-    console.log(data);
     var res = this.httpservice.post(`${this.url}Notes`, data, true, this.header);
-    console.log(res);
     return res;
   }
   getNotes(){
     var res = this.httpservice.get(`${this.url}Notes/allNotes`, true, this.header);
+    return res;
+  }
+  getArchivedNotes(){
+    var res = this.httpservice.get(`${this.url}Notes/archivedNotes`, true, this.header);
     console.log(res);
     return res;
   }

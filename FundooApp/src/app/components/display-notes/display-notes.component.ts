@@ -19,7 +19,7 @@ export class DisplayNotesComponent implements OnInit {
       this.data = JSON.stringify(service);
       var res = JSON.parse(this.data);
       this.allNotes = res['response'];
-      //console.log(serve);
+      this.notes.emit(this.allNotes);
     });
   }
   getNotes(notes: any){

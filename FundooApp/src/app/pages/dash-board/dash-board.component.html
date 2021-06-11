@@ -13,7 +13,7 @@
     </mat-form-field>
   </div>
   <div>
-    <button mat-button matTooltip="Fundoo Account">
+    <button mat-button matTooltip="Fundoo Account" (click)="openDialog()">
       <mat-icon>account_circle</mat-icon>
     </button>
   </div>
@@ -33,7 +33,7 @@
           </div>  
           <div class="drawer-menu"><button mat-button><div id="btn-icon"><mat-icon>add_alert</mat-icon>
           </div><div id="btn-name" *ngIf="showDrawer">Remainders</div></button></div>
-          <div class="drawer-menu"><button mat-button><div id="btn-icon"><mat-icon>archive</mat-icon>
+          <div class="drawer-menu"><button mat-button (click)="activeArchive()"><div id="btn-icon"><mat-icon>archive</mat-icon>
           </div><div id="btn-name" *ngIf="showDrawer">Archive</div></button></div>
           <div class="drawer-menu"><button mat-button><div id="btn-icon"><mat-icon>delete_outline</mat-icon>
           </div><div id="btn-name" *ngIf="showDrawer">Trash</div></button></div>
@@ -41,7 +41,8 @@
   </mat-drawer>
   <mat-drawer-content>
     <div class="notes-container">
-      <app-notes (messageEvent)="receiveMessage($event)"></app-notes>
+      <app-notes (messageEvent)="receiveMessage($event)" *ngIf="notes"></app-notes>
+      <app-archive-notes (archiveNotes)="archiveNotes($event)" *ngIf="archive"></app-archive-notes>
   </div>
   </mat-drawer-content>
 </mat-drawer-container>

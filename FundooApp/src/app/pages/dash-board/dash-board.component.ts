@@ -3,6 +3,7 @@ import { DisplayNotesComponent } from 'src/app/components/display-notes/display-
 import { DrawerComponent } from 'src/app/components/drawer/drawer.component';
 import { TakeNoteComponent } from './../../components/take-note/take-note.component'
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogComponentComponent } from 'src/app/components/dialog-component/dialog-component.component';
 
 @Component({
   selector: 'app-dash-board',
@@ -11,12 +12,21 @@ import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 })
 export class DashBoardComponent implements OnInit {
  
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
   showDrawer = false;
-allNotes:any =[];
-
+  notes = true;
+  archive = false;
+  allNotes:any =[];
+  archivedNotes:any =[];
+  activeArchive(){
+    this.notes = false;
+    this.archive = true;
+  }
+  openDialog(){
+    let dialogRef = this.dialog.open(DialogComponentComponent);
+  }
   ngOnInit(): void {
-    
+    console.log(this.archivedNotes);
   }
   displayNote(notes:any){
     this.allNotes = notes;
@@ -29,7 +39,9 @@ allNotes:any =[];
  showDrawerToggle(){
    this.showDrawer = !this.showDrawer;
  }
-
+ archiveNotes(event:any[]){
+  console.log(event);
+ }
  message:any = [];
 
   receiveMessage($event: any) {
