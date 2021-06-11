@@ -12,7 +12,7 @@ export class DisplayNotesComponent implements OnInit {
   allNotes:any=[];
   @Output() notes: EventEmitter<any[]> = new EventEmitter<any[]>();
   constructor(private service: NotesServicesService) { }
-
+  showButton: boolean = false;
   ngOnInit(): void {
     console.log("get note.ts");
     this.service.getNotes().subscribe((service)=>{

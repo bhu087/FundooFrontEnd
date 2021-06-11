@@ -13,6 +13,9 @@
     background-color: white;
     box-sizing: border-box;
     border-bottom: solid 1px rgba(0,0,0,0.12);
+    .search-field-responsive{
+        display: none;
+    }
 }
 .search-field{
     margin-left: 0px !important;
@@ -31,24 +34,20 @@
     .mat-form-field{
         width: 100%;
     }
+    .search-icon-responsive{
+        display: none;
+    }
 }
 
 
-.example-container {
+.drawer-container {
     width: 100%;
     height: 100%;
     background-color: white !important;
   }
+
   
-  .example-sidenav-content {
-    display: flex;
-    width: 200%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .example-sidenav {
+  .drawer-sidenav {
     width: 30%;
   }
 .sideNav{
@@ -81,24 +80,22 @@
 ::ng-deep .mat-drawer-contentainer {
     background-color: white !important;
 }
- 
 
-.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
-    display: flex !important;
-    align-items: center;
-}
-.mat-button-wrapper{
-    display: inline !important;
-}
-::ng-deep .mat-icon {
-    vertical-align: middle;
-}
-
-
-//////////////////
-
-::ng-deep mat-drawer-content{
-    display: flex;
-    justify-content: start;
-    flex-direction: row-reverse;
+@media (max-width: 600px) {
+    .notesCard{
+        display: inline !important;
+        flex-direction: row-reverse !important;
+    }
+    mat-card{
+        width: 50% !important;
+    }
+    .search-icon{
+        display: visible !important;
+    }
+    .search-input-field{
+        display: none !important;
+    }
+    .search-icon-responsive{
+        display: block !important;
+    }
 }

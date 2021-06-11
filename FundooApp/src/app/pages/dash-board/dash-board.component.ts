@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DisplayNotesComponent } from 'src/app/components/display-notes/display-notes.component';
-import { DrawerComponent } from 'src/app/components/drawer/drawer.component';
-import { TakeNoteComponent } from './../../components/take-note/take-note.component'
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { DialogComponentComponent } from 'src/app/components/dialog-component/dialog-component.component';
 
 @Component({

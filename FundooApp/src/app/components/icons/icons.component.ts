@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class IconsComponent implements OnInit {
 
   constructor() { }
-  showButton: boolean = false;
   ngOnInit(): void {
   }
 

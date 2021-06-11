@@ -1,12 +1,25 @@
 .notesCard{
-    width: 50%;
-    padding-top: 30px;
-    padding-left: 30px;
+    padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    background-size: cover;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-direction: reverse;
 }
 mat-card{
-    min-width: 180px;
+    min-width: 200px;
+    min-height: 180px;
+    margin-top: 20px;
+}
+app-icons{
+    display: none;
+}
+mat-card:hover app-icons{
+    display:block;
+}
+
+@media (max-width: 600px) {
+    .notesCard{
+        display: inline !important;
+        flex-direction: column-reverse !important;
+    }
 }

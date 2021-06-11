@@ -1,11 +1,16 @@
+<div class="notesCard" fxFlex>
+    <div *ngFor="let item of allNotes">
+        <div>
+            <mat-card>
+                <mat-card-title>{{item.title}}</mat-card-title>
+                <mat-card-content>{{item.description}}
 
-<div class="notesCard" fxFlex fxLayoutAlign="center center" *ngFor="let item of allNotes">
-    <div>
-        <mat-card>
-            <mat-card-title>{{item.title}}</mat-card-title>
-            <mat-card-content>{{item.description}}
-                <app-icons></app-icons>
-            </mat-card-content>
-        </mat-card>
+                </mat-card-content>
+                <mat-card-actions fxFlexAlign="end" align="end">
+                    <app-icons></app-icons>
+                </mat-card-actions>
+
+            </mat-card>
+        </div>
     </div>
 </div>

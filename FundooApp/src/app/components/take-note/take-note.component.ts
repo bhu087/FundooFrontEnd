@@ -22,9 +22,6 @@ export class TakeNoteComponent implements OnInit {
   }
   panelOpenState: boolean = false;
   togglePanel() {
-    if(this.panelOpenState){
-      this.collapsed = !this.collapsed
-    }
     this.panelOpenState = !this.panelOpenState
   }
   collapseMatTitle(){
