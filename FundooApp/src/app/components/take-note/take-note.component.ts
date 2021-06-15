@@ -10,7 +10,7 @@ import { stringify } from '@angular/compiler/src/util';
   styleUrls: ['./take-note.component.scss']
 })
 export class TakeNoteComponent implements OnInit {
-  @Output() output: EventEmitter<any> = new EventEmitter();
+  @Output() takeNoteEvent: EventEmitter<any> = new EventEmitter();
   constructor(private formBuilder: FormBuilder, private service: NotesServicesService) { }
   createNote= this.formBuilder.group({
     note: ['', [Validators.required]],
@@ -44,6 +44,6 @@ export class TakeNoteComponent implements OnInit {
     });
   }
   sendNotification() {
-    this.output.emit();
+    this.takeNoteEvent.emit();
 }
 }

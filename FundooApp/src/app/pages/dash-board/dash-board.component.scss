@@ -48,7 +48,7 @@
 
 // side nav //
   .drawer-sidenav {
-    width: 20%;
+    width: 15%;
   }
 .sideNav{
       width: 100%;
@@ -93,10 +93,12 @@
 @media (max-width: 600px) {
     .notesCard{
         display: inline !important;
+        justify-content: center;
         flex-direction: row-reverse !important;
     }
-    mat-card{
-        width: 50% !important;
+   ::ng-deep .mat-card{
+        width: 50%;
+        margin-left: 10%;
     }
     .search-icon{
         display: visible !important;
@@ -110,5 +112,9 @@
     // button names //
     #btn-name{
         display: none !important;
+    }
+    .notes-icon{
+        justify-content: start !important;
+        margin-left: -10px;
     }
 }

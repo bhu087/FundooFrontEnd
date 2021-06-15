@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NotesServicesService } from 'src/app/services/notesService/notes-services.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { NotesServicesService } from 'src/app/services/notesService/notes-servic
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss']
 })
-export class NotesComponent implements OnInit {
+export class NotesComponent implements OnInit, AfterViewInit {
   data:any;
   allNotes:any=[];
   @Output() notes = new EventEmitter();
@@ -22,6 +22,9 @@ export class NotesComponent implements OnInit {
       this.allNotes = res['response'];
       console.log(this.allNotes);
     });
+  }
+  ngAfterViewInit(){
+    this.callNotes();
   }
   getNotification(event:any){
     this.callNotes();

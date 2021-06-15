@@ -1,0 +1,16 @@
+<div class="update-notes-container">
+<form [formGroup]="createNote">
+  <div mat-dialog-content>
+    <mat-form-field [floatLabel]="'never'">
+      <input matInput formControlName="title" [(ngModel)]="title">
+    </mat-form-field>
+    <mat-form-field [floatLabel]="'never'">
+      <input matInput placeholder="Take a Note" formControlName="note" [(ngModel)]="description">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <app-icons></app-icons>
+    <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+  </div>
+</form>
+</div>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { NotesServicesService } from 'src/app/services/notesService/notes-services.service';
 
 @Component({
@@ -8,14 +8,10 @@ import { NotesServicesService } from 'src/app/services/notesService/notes-servic
 })
 export class IconsComponent implements OnInit {
 @Input() notes:any;
-@Output() output: EventEmitter<any> = new EventEmitter();
   constructor(private notesService: NotesServicesService) { }
-
-  
-
   ngOnInit(): void {
   }
-  addToArchive() {
+  addToTrash() {
     console.log(this.notes.notesId);
     this.notesService.addToTrash(this.notes.notesId).subscribe((service) => {
       console.log(service);
@@ -24,5 +20,9 @@ export class IconsComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+  value:any;
+  display(){
+    console.log(this.value);
   }
 }

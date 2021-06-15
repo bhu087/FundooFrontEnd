@@ -1,1 +1,16 @@
-<p>dialog-component works!</p>
+<div class="update-notes-container">
+<form [formGroup]="createNote">
+  <div mat-dialog-content>
+    <mat-form-field [floatLabel]="'never'">
+      <input matInput formControlName="FormTitle" [(ngModel)]="title">
+    </mat-form-field>
+    <mat-form-field [floatLabel]="'never'">
+      <input matInput formControlName="FormDescription" [(ngModel)]="description">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <app-icons [notes]="data"></app-icons>
+    <button mat-button mat-dialog-close cdkFocusInitial (click)="updateData()">Close</button>
+  </div>
+</form>
+</div>

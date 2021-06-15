@@ -14,10 +14,12 @@ mat-card{
 app-icons{
     display: none;
 }
+mat-card:active app-icons{
+    display:block;
+}
 mat-card:hover app-icons{
     display:block;
 }
-
 @media (max-width: 600px) {
     .notesCard{
         display: inline !important;

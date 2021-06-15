@@ -1,0 +1,22 @@
+.profile-container{
+ display: flex;
+ justify-content: center;
+ align-items: center;   
+}
+
+
+
+.mat-card-avatar{
+    margin-top: 0 !important;
+    width: 90px;
+    height: 90px;
+}
+::ng-deep .nav-bar-profile{
+    .mat-card-avatar{
+        width: 50px !important;
+        height: 50px !important; 
+    }
+}
+.mat-button {
+    vertical-align: middle;
+}

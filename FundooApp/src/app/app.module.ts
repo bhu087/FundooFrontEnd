@@ -34,6 +34,9 @@ import { DialogComponentComponent } from './components/dialog-component/dialog-c
 import { ArchiveNotesComponent } from './components/archive-notes/archive-notes.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
+import { ProfileMenuComponent } from './components/profile-menu/profile-menu.component';
+import { UpdateNotesComponent } from './components/update-notes/update-notes.component';
+
 
 
 @NgModule({
@@ -50,7 +53,9 @@ import {MatMenuModule} from '@angular/material/menu';
     NotesComponent,
     DisplayNotesComponent,
     DialogComponentComponent,
-    ArchiveNotesComponent
+    ArchiveNotesComponent,
+    ProfileMenuComponent,
+    UpdateNotesComponent
   ],
   entryComponents:[DialogComponentComponent],
   imports: [

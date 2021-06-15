@@ -36,4 +36,8 @@ export class NotesServicesService {
     console.log(res);
     return res;
   }
+  updateNote(data:any){
+    var res = this.httpservice.put(`${this.url}Notes`, data, true, this.header);
+    return res;
+  }
 }

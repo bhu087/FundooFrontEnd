@@ -5,7 +5,9 @@
     <button matTooltip="Add Collaborator" mat-icon-button>
         <mat-icon>person_add</mat-icon>
     </button>
-    <button matTooltip="Add Color" mat-icon-button>
+    <button type="color" matTooltip="Add Color" mat-icon-button (click)="display()">
+        <input type="color" id="color-picker" name="head" (click)="display()" [(value)]="value"
+           value="#e66465">
         <mat-icon>color_lens</mat-icon>
     </button>
     <button matTooltip="Add image" mat-icon-button>
@@ -18,6 +20,6 @@
         <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu = "matMenu">
-        <button mat-menu-item (click)="addToArchive()">Delete Note</button>
+        <button mat-menu-item (click)="addToTrash()">Delete Note</button>
      </mat-menu>
 </div>

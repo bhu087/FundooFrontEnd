@@ -1,0 +1,18 @@
+<button mat-button matTooltip="Fundoo Account" [matMenuTriggerFor]="profile">
+    <div fxLayoutAlign="center center" class="nav-bar-profile">
+        <img mat-card-avatar
+            [src]="profileUrl" />
+    </div>
+</button>
+<div fxLayoutAlign="center center" class="profile-container">
+    <mat-menu #profile="matMenu" class="profile-menu">
+        <div fxLayoutAlign="center center" >
+            <img mat-card-avatar
+                [src]="profileUrl" alt=""/>
+        </div>
+        <h1 fxLayoutAlign="center center">Bhushan Kumar D Naik</h1>
+        <p fxLayoutAlign="center center">Bhu@g.co</p>
+        <button fxLayoutAlign="center center" mat-menu-item>Manage Account</button>
+        <button fxLayoutAlign="center start" mat-button (click)="logOut()">log out</button>
+    </mat-menu>
+</div>

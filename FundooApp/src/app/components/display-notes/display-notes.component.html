@@ -1,9 +1,9 @@
 <div class="notesCard" fxFlex>
     <div *ngFor="let item of allNotes">
         <div>
-            <mat-card>
-                <mat-card-title>{{item.title}}</mat-card-title>
-                <mat-card-content>{{item.description}}
+            <mat-card [style.backgroundColor]="item.color">
+                <mat-card-title (click)="openAddFileDialog(item)">{{item.title}}</mat-card-title>
+                <mat-card-content (click)="openAddFileDialog(item)">{{item.description}}
 
                 </mat-card-content>
                 <mat-card-actions>

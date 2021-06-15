@@ -1,4 +1,4 @@
-<app-take-note (output)="getNotification($event)"></app-take-note>
+<app-take-note (takeNoteEvent)="getNotification($event)"></app-take-note>
 <div class="display-container">
     <app-display-notes [allNotes]="allNotes"></app-display-notes>
 </div>

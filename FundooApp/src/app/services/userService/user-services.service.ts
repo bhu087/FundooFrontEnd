@@ -10,6 +10,12 @@ export class UserServicesService {
 
   constructor(private httpservice: HttpServicesService) { }
   url = environment.baseUrl;
+  header = {
+    headers: new HttpHeaders({
+      'authorization': `Bearer ${localStorage.Bearer}`,
+      'content-Type': 'application/json'
+    })
+  }
   register(data: any){
     return this.httpservice.post(`${this.url}Account`, data);
   }
@@ -31,6 +37,10 @@ export class UserServicesService {
     console.log(data);
     var res = this.httpservice.post(`${this.url}Account/Forget/${data}`, data);
     console.log(res);
+    return res;
+  }
+  getProfilePic(){
+    var res = this.httpservice.get(`${this.url}Account/downloadProfilePic`, true, this.header);
     return res;
   }
 }
